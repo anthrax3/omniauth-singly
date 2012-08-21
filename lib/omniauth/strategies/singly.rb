@@ -12,7 +12,10 @@ module OmniAuth
       }
 
       def authorize_params
-        super.merge(:service => request.params["service"])
+        super.merge({
+          :service => request.params["service"],
+          :scope => request.params["scope"]
+        })
       end
 
       uid { raw_info["id"] }
