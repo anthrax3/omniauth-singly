@@ -13,7 +13,7 @@ module OmniAuth
 
       def authorize_params
         super.tap do |params|
-          %w(service scope).each do |p|
+          %w(service scope account).each do |p|
             params[p.to_sym] = request.params[p] if request.params[p]
           end
         end
