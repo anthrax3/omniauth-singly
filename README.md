@@ -26,6 +26,17 @@ You can authorize many services through Singly. Link to
 
 where `service` is anything from the list at http://dev.singly.com/authorization
 
+## Scope
+
+Custome scopes can be passed through Singly to a service via the `scope`
+parameter:
+
+    /auth/singly?service=<service>&scope=<scope>
+
+For more details, see the [authorization
+documentation](https://singly.com/docs/authorization). To see what scopes are
+available, check the documentation for the service you're using.
+
 ## License
 
 Copyright (c) 2011 Singly, Inc.
