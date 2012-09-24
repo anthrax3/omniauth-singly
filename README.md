@@ -2,7 +2,7 @@
 
 This is the official OmniAuth strategy for authenticating to Singly. To
 use it, you'll need to sign up for an OAuth2 Application ID and Secret
-on the [Singly Applications Page](https://dev.singly.com/apps).
+on the [Singly Applications Page](https://singly.com/apps).
 
 ## Basic Usage
 
@@ -24,7 +24,8 @@ You can authorize many services through Singly. Link to
 
     /auth/singly?service=<service>
 
-where `service` is anything from the list at http://dev.singly.com/authorization
+To see what services are supported, check the [Service
+Overview](https://singly.com/docs/services_overview).
 
 ## Scope
 
