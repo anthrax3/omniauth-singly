@@ -31,11 +31,29 @@ module OmniAuth
         { :raw_info => raw_info }
       end
 
+      info do
+        {
+            :name => info["name"],
+            :email => info["email"],
+            :description => info["description"],
+            :image => info["thumbnail_url"],
+            :urls => { :url => info["url"]}
+        }
+      end
+
       def raw_info
         @raw_info ||= begin
           access_token.options[:mode] = :query
           access_token.options[:param_name] = :access_token
           access_token.get("/profiles").parsed
+        end
+      end
+
+      def info
+        @info ||= begin
+          access_token.options[:mode] = :query
+          access_token.options[:param_name] = :access_token
+          access_token.get("/profile").parsed
         end
       end
     end
