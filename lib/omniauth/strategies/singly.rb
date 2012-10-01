@@ -33,11 +33,11 @@ module OmniAuth
 
       info do
         {
-            :name => info["name"],
-            :email => info["email"],
-            :description => info["description"],
-            :image => info["thumbnail_url"],
-            :urls => { :url => info["url"]}
+            :name => retrieve_info["name"],
+            :email => retrieve_info["email"],
+            :description => retrieve_info["description"],
+            :image => retrieve_info["thumbnail_url"],
+            :urls => { :url => retrieve_info["url"]}
         }
       end
 
@@ -49,7 +49,9 @@ module OmniAuth
         end
       end
 
-      def info
+      private
+
+      def retrieve_info
         @info ||= begin
           access_token.options[:mode] = :query
           access_token.options[:param_name] = :access_token
