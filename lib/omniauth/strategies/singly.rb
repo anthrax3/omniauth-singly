@@ -25,7 +25,7 @@ module OmniAuth
         end
       end
 
-      uid { raw_info["id"] }
+      uid { access_token.params['account'] }
 
       extra do
         { :raw_info => raw_info }
