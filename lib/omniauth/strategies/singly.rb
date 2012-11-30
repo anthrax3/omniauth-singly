@@ -4,6 +4,7 @@ module OmniAuth
   module Strategies
     class Singly < OmniAuth::Strategies::OAuth2
       PASSTHROUGHS = %w[
+        access_token
         account
         scope
         service
@@ -13,7 +14,7 @@ module OmniAuth
 
       option :client_options, {
         :site => "https://api.singly.com",
-        :authorize_url => "https://api.singly.com/oauth/authorize",
+        :authorize_url => "https://api.singly.com/oauth/authenticate",
         :token_url => "https://api.singly.com/oauth/access_token"
       }
 

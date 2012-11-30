@@ -13,7 +13,7 @@ describe OmniAuth::Strategies::Singly do
 
     it "uses the correct authorize_url" do
       subject.options.client_options.authorize_url.
-        should == "https://api.singly.com/oauth/authorize"
+        should == "https://api.singly.com/oauth/authenticate"
     end
 
     it "uses the correct token_url" do
