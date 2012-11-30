@@ -27,6 +27,19 @@ You can authorize many services through Singly. Link to
 To see what services are supported, check the [Service
 Overview](https://singly.com/docs/services_overview).
 
+## Connecting multiple profiles
+
+To connect a second (or Nth) profile to an existing account, include the user's
+Singly `access_token` in the auth URL. Use this when, for example, the user has
+logged in with Facebook and wants to also connect Twitter. If an `access_token`
+is not included, no profile merging will _ever_ take place—either a new account
+will be created or the user will log in to an existing account.
+
+    /auth/singly?service=<service>&access_token=<token>
+
+For more details, see the [authorization
+documentation](https://singly.com/docs/authorization).
+
 ## Scope
 
 Custome scopes can be passed through Singly to a service via the `scope`
